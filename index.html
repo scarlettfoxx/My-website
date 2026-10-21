@@ -25,7 +25,20 @@
         max-width: 600px;
         width: 90%;
         margin: 20px auto;
+
+      transition: transform 0.3s ease,
+                  box-shadow 0.3s ease,
+                  border-color 0.3s ease;
         }
+
+      .card:hover {
+transform: translateY(-6px);
+border-color: #35c9ff;
+box-shadow:
+0 0 10px rgba(0, 191, 255, 0.45),
+0 0 25px rgba(0, 191, 255, 0.25),
+0 12px 30px rgba(0, 0, 0, 0.35);
+}
       h1 {
         font-weight: 600;
         font-size: 36px;
