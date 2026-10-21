@@ -3,6 +3,7 @@
   <head>
 <title>My First Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
       background-color: lavender;
@@ -39,6 +40,20 @@
         line-height: 1.6;
         margin: 8px 0;
         }
+      footer {
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #777;
+        }
+      /* Makes it look better on phone */
+      @media (max-width: 600px) {
+        .card {
+          padding: 25px;
+          }
+        h1 {
+          font-size: 1.8em;
+          }
+        }
     </style>
 </head>
 <body>
@@ -61,6 +76,9 @@
   <h2>My inspirations:</h2>
   <p>I was inspired to partake in this challenge after watching Iron man 1&2 for the first time
   this year. It may seem childish but it unlocked my love for building things.</p>
+  </footer>
+    Made in 2026 • Built for a challenge
+  </footer>
   </div>
   </body>
 </html>
