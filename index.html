@@ -29,6 +29,7 @@
       transition: transform 0.3s ease,
                   box-shadow 0.3s ease,
                   border-color 0.3s ease;
+        animation: borderPulse 3s ease-in-out infinite;
         }
 
       .card:hover {
@@ -113,12 +114,13 @@ min-height: 24px;
       @keyframes borderPulse { 
         0%, 100% {
           box-shadow: 0 0 8px rgba(0, 191, 255, 0.15);
-          border-color: #167da0
+          border-color: #167da0;
           }
         50% {
           box-shadow: 0 0 18px rgba(0, 191, 255, 0.15);
           border-color: #35c9ff;
           }
+        }
     </style>
 </head>
 <body>
