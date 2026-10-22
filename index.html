@@ -121,6 +121,36 @@ min-height: 24px;
           border-color: #35c9ff;
           }
         }
+      #jarvis-loader {
+text-align: center;
+padding: 25px 10px;
+color: #35c9ff;
+font-family: "Courier New", monospace;
+font-size: 12px;
+letter-spacing: 2px;
+}
+
+.loader-ring {
+width: 55px;
+height: 55px;
+margin: 0 auto 15px;
+border: 3px solid rgba(53, 201, 255, 0.2);
+border-top: 3px solid #35c9ff;
+border-right: 3px solid #35c9ff;
+border-radius: 50%;
+animation: jarvisSpin 1.2s linear infinite;
+box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
+}
+
+@keyframes jarvisSpin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+
     </style>
 </head>
 <body>
