@@ -100,8 +100,22 @@ transform: translateY(-3px);
 background-color: #142b40;
 box-shadow: 0 0 18px rgba(0, 191, 255, 0.55);
 }
+      #jarvis-message {
+        color: #35c9ff;
+        font-family: "Courier New", monospace;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+        margin-top: 20px
+        min-height: 24px
+        }
     </style>
 </head>
+  <script>
+    function activateJarvis() {
+      const message = document.getElementById("jarvis-message");
+      message.textContent = "SYSTEM ONLINE - JARVIS INITIALIZED.";
+  </script>
 <body>
   <div class="card">
   <h1>Welcome</h1>
@@ -111,7 +125,8 @@ box-shadow: 0 0 18px rgba(0, 191, 255, 0.55);
   <p>More coming soon hopefully...</p>
    <h2>About me:</h2>
   <p>I'm a beginner learning how to code and build things onine</p>
-    <button>ACTIVATE JARVIS</button>
+    <button onclick="activateJarvis()">ACTIVATE JARVIS</button>
+    <p id="jarvis-message" aria-lives="polite"></p> 
 
     <h2>Challenges I'm currently partaking in:</h2>
   <p>I'm currently in The half life Hack club challenge and the Terra challenge to
