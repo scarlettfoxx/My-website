@@ -1,199 +1,148 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<title>My First Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      body {
-      background-color: #080d18;
-        color: #e6f4ff;
-      font-family: Arial,sans-serif;
-        margin: 0;
-        padding: 40px 20px;
-        display: flex;
-        justify-content: center;
-        min-height:100vh;
-      }
-      .card {
-        background: #101a2b;
-        border: 1px solid #00bfff;
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(0, 191, 225, 0.15);
-        color: #e6f4ff;
-        max-width: 600px;
-        width: 90%;
-        margin: 20px auto;
-
-      transition: transform 0.3s ease,
-                  box-shadow 0.3s ease,
-                  border-color 0.3s ease;
-        animation: borderPulse 3s ease-in-out infinite;
-        }
-
-      .card:hover {
-transform: translateY(-6px);
-border-color: #35c9ff;
-box-shadow:
-0 0 10px rgba(0, 191, 255, 0.45),
-0 0 25px rgba(0, 191, 255, 0.25),
-0 12px 30px rgba(0, 0, 0, 0.35);
+<head>
+<title>Spider's Jarvis System</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+--bg: #0a0f1c;
+--card-bg: rgba(10, 25, 47, 0.85);
+--text: #00f0ff;
+--heading: #00f0ff;
+--border: #00f0ff;
+--btn-bg: transparent;
+--btn-text: #00f0ff;
 }
-      h1 {
-        font-weight: 600;
-        font-size: 36px;
-        margin_bottom: 20px;
-        font-family: "Courier New", monospace;
-        color: #35c9ff;
-        text-shadow: 0 0 10px rgba(0, 191, 225, 0.35);
-        }
-      h2 {
-     font-weight: 600;
-        font-size: 36px;
-        margin_bottom: 20px;
-        font-family: "Courier New", monospace;
-        color: #35c9ff;
-        text-shadow: 0 0 10px rgba(0, 191, 225, 0.35);
-        }
-      p {
-        font-family: "Courier New", monospace;
-        color: #35c9ff;
-        text-shadow: 0 0 10px rgba(0, 191, 225, 0.35);
-        line-height: 1.6;
-        margin: 8px 0;
-        }
-      footer {
-        margin-top: 40px;
-        font-size: 0.9em;
-       font-family: "Courier New", monospace;
-        color: #35c9ff;
-        text-shadow: 0 0 10px rgba(0, 191, 225, 0.35);
-        }
-      /* Makes it look better on phone */
-      @media (max-width: 600px) {
-        .card {
-          padding: 25px;
-          }
-        h1 {
-          font-size: 1.8em;
-          }
-        }
-      button {
-background: #101a2b;
-color: #35c9ff;
-border: 1px solid #35c9ff;
-padding: 12px 24px;
-border-radius: 8px;
-font-family: "Courier New", monospace;
+
+body.light {
+--bg: #e8f4f8;
+--card-bg: #ffffff;
+--text: #1a3a4a;
+--heading: #0a5a6e;
+--border: #0a5a6e;
+--btn-bg: #0a5a6e;
+--btn-text: white;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: var(--bg);
+font-family: 'Share Tech Mono', monospace;
+color: var(--text);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 30px 20px;
+transition: background-color 0.4s ease;
+}
+
+.top-bar {
+text-align: center;
+margin-bottom: 25px;
+letter-spacing: 3px;
 font-size: 14px;
-font-weight: bold;
+opacity: 0.8;
+}
+
+.theme-btn {
+position: fixed;
+top: 20px;
+right: 20px;
+padding: 10px 18px;
+border: 2px solid var(--border);
+background: var(--btn-bg);
+color: var(--btn-text);
+font-family: 'Share Tech Mono', monospace;
+font-size: 14px;
+cursor: pointer;
+border-radius: 4px;
+transition: all 0.3s ease;
+z-index: 100;
+}
+
+.theme-btn:hover {
+box-shadow: 0 0 15px var(--border);
+}
+
+.activate-btn {
+display: inline-block;
+padding: 12px 30px;
+border: 2px solid #00f0ff;
+background: transparent;
+color: #00f0ff;
+font-family: 'Orbitron', sans-serif;
+font-size: 16px;
 letter-spacing: 2px;
 cursor: pointer;
-
-transition: transform 0.25s ease,
-box-shadow 0.25s ease,
-background-color 0.25s ease;
+margin-bottom: 30px;
+transition: all 0.3s ease;
+border-radius: 4px;
 }
 
-button:hover {
-transform: translateY(-3px);
-background-color: #142b40;
-box-shadow: 0 0 18px rgba(0, 191, 255, 0.55);
-}
-      #jarvis-message {
-color: #35c9ff;
-font-family: "Courier New", monospace;
-font-weight: bold;
-letter-spacing: 2px;
-text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
-margin-top: 20px;
-min-height: 24px;
+.activate-btn:hover {
+background: rgba(0, 240, 255, 0.15);
+box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
 }
 
-      @keyframes borderPulse { 
-        0%, 100% {
-          box-shadow: 0 0 8px rgba(0, 191, 255, 0.15);
-          border-color: #167da0;
-          }
-        50% {
-          box-shadow: 0 0 18px rgba(0, 191, 255, 0.15);
-          border-color: #35c9ff;
-          }
-        }
-      #jarvis-loader {
-text-align: center;
-padding: 25px 10px;
-color: #35c9ff;
-font-family: "Courier New", monospace;
-font-size: 12px;
+.card {
+background: var(--card-bg);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 40px 35px;
+max-width: 700px;
+width: 100%;
+box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+transition: all 0.4s ease;
+}
+
+h1 {
+font-family: 'Orbitron', sans-serif;
+font-size: 2.4em;
+margin-bottom: 10px;
+color: var(--heading);
 letter-spacing: 2px;
 }
 
-.loader-ring {
-width: 55px;
-height: 55px;
-margin: 0 auto 15px;
-border: 3px solid rgba(53, 201, 255, 0.2);
-border-top: 3px solid #35c9ff;
-border-right: 3px solid #35c9ff;
+.subtitle {
+opacity: 0.8;
+margin-bottom: 25px;
+font-size: 15px;
+}
+
+h2 {
+font-family: 'Orbitron', sans-serif;
+font-size: 1.3em;
+margin: 30px 0 12px;
+color: var(--heading);
+letter-spacing: 1px;
+}
+
+p {
+line-height: 1.7;
+margin-bottom: 8px;
+font-size: 15px;
+}
+
+.images {
+display: flex;
+justify-content: center;
+gap: 25px;
+margin: 35px 0 20px;
+flex-wrap: wrap;
+}
+
+.images img {
+width: 130px;
+height: 130px;
 border-radius: 50%;
-animation: jarvisSpin 1.2s linear infinite;
-box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
-}
+border: 2px solid var(--border);
+object-fit: cover;
+box-shadow: 0
 
-@keyframes jarvisSpin {
-from {
-transform: rotate(0deg);
-}
-to {
-transform: rotate(360deg);
-}
-}
-
-    </style>
-</head>
-<body>
-  <div id="jarvis-loader">
-    <div class= loader-ring"></div>
-    <p>INITALIZING STARK SYSTEMS...</p>
-    <div>
-    <button onclick="activateJarvis()" style="background:#101a2b;color:#35c9ff;border:1px solid #35c9ff; padding:12px 24px;border-radius:8px;cursor:pointer;">
-      Activate Jarvis
-    </button>
-    <p id="jarvis-message"></p>
-  <div class="card">
-  <h1>Welcome</h1>
-    <p style="color:#35c9ff; font-family:monospace; letter-spacing:1px;">
-      Your personal system is online </p>
-  <p>Hello, I'm spider and this is my very first website. I'm learning with Hack Club!</p>
-    
-  <p>Wish me luck!!!</p>
-  <p>More coming soon hopefully...</p>
-   <h2>About me:</h2>
-  <p>I'm a beginner learning how to code and build things onine</p>
-
-    <h2>Challenges I'm currently partaking in:</h2>
-  <p>I'm currently in The half life Hack club challenge and the Terra challenge to
-  hopefully win a framework laptop and 3D printer</p>
-
-    <h2>My hobbies/Interests:</h2>
-  <p>Reading books, Playing sports, Watching movies, shows, or anime, and learning new things</p>
-
-  <h2>My inspirations:</h2>
-  <p>I was inspired to partake in this challenge after watching Iron man 1&2 for the first time
-  this year. It may seem childish but it unlocked my love for building things.More upgrades coming soon!!!</p>
-    <img src="images.jpg" alt="My photo" width="180" style="border-radius: 50%; margin: 20px 0;">
-    <img src="1735651667987.jpg" alt="My photo" width="190" style="height: 180px; object-fit: cover; border-radius: 40%; margin:0 0 20px auto;">
-    <p>.                                                                                     .</p>
-  </footer>
-    Made in 2026 • Built for a challenge
-  </footer>
-  </div>
-  <script>
-    function activateJarvis() {
-      const message = document.getElementById("jarvis-message");
-      message.textContent = "SYSTEM ONLINE - JARVIS INITIALIZED.";
-  </script>
-  </body>
-  </html>
