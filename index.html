@@ -194,4 +194,183 @@
             text-align: center;
         }
 
-       
+        /* CARD GLOW ANIMATION */
+        @keyframes borderPulse {
+            0%, 100% {
+                box-shadow: 0 0 8px rgba(0, 191, 255, 0.15);
+                border-color: #167da0;
+            }
+
+            50% {
+                box-shadow: 0 0 18px rgba(0, 191, 255, 0.3);
+                border-color: #35c9ff;
+            }
+        }
+
+        /* FULL-SCREEN JARVIS LOADER */
+        #jarvis-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #080d18;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #35c9ff;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: opacity 0.8s ease;
+        }
+
+        .loader-ring {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            border: 3px solid rgba(53, 201, 255, 0.2);
+            border-top: 3px solid #35c9ff;
+            border-right: 3px solid #35c9ff;
+            border-radius: 50%;
+            animation: jarvisSpin 1.2s linear infinite;
+            box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
+        }
+
+        @keyframes jarvisSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* PHONE LAYOUT */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .card {
+                padding: 25px;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .photos {
+                gap: 12px;
+            }
+
+            .photos img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        /* RESPECT REDUCED MOTION PREFERENCES */
+        @media (prefers-reduced-motion: reduce) {
+            .card,
+            .loader-ring {
+                animation: none;
+            }
+
+            .card,
+            button,
+            .photos img {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- JARVIS STARTUP SCREEN -->
+    <div id="jarvis-loader">
+        <div class="loader-ring"></div>
+        <p>INITIALIZING STARK SYSTEMS...</p>
+    </div>
+
+    <!-- YOUR WEBSITE -->
+    <main class="card">
+
+        <div class="status">● SYSTEM ONLINE</div>
+
+        <h1>Welcome</h1>
+
+        <p class="subtitle">⚡ ENGINEERING THE FUTURE ⚡</p>
+
+        <hr class="divider">
+
+        <p>Hello, I'm spider and this is my very first website. I'm learning with Hack Club!</p>
+
+        <p>Wish me luck!!!</p>
+
+        <p>More coming soon hopefully...</p>
+
+        <h2>About me:</h2>
+
+        <p>I'm a beginner learning how to code and build things onine</p>
+
+        <h2>Challenges I'm currently partaking in:</h2>
+
+        <p>I'm currently in The half life Hack club challenge and the Terra challenge to hopefully win a framework laptop and 3D printer</p>
+
+        <h2>My hobbies/Interests:</h2>
+
+        <p>Reading books, Playing sports, Watching movies, shows, or anime, and learning new things</p>
+
+        <h2>My inspirations:</h2>
+
+        <p>I was inspired to partake in this challenge after watching Iron man 1&2 for the first time this year. It may seem childish but it unlocked my love for building things.More upgrades coming soon!!!</p>
+
+        <!-- YOUR TWO ORIGINAL PHOTOS -->
+        <div class="photos">
+            <img src="images.jpg" alt="My photo" class="photo-one">
+            <img src="1735651667987.jpg" alt="My photo" class="photo-two">
+        </div>
+
+        <!-- WORKING JARVIS BUTTON -->
+        <button type="button" onclick="activateJarvis()">
+            ACTIVATE JARVIS
+        </button>
+
+        <p id="jarvis-message" aria-live="polite"></p>
+
+        <footer>
+            Made in 2026 • Built for a challenge
+        </footer>
+
+    </main>
+
+    <!-- JARVIS BUTTON FUNCTION + LOADER -->
+    <script>
+        function activateJarvis() {
+            const message = document.getElementById("jarvis-message");
+
+            message.textContent = "SYSTEM ONLINE - JARVIS INITIALIZED.";
+        }
+
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("jarvis-loader");
+
+            setTimeout(function() {
+                loader.style.opacity = "0";
+
+                setTimeout(function() {
+                    loader.style.display = "none";
+                }, 800);
+            }, 1800);
+        });
+    </script>
+
+</body>
+</html>
