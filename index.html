@@ -306,6 +306,30 @@
             padding: 15px;
             margin-top: 15px
             }
+        .scanner {
+            height: 120px;
+            border: 1px solid cyan;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            background:#020a12;
+            }
+        .scan-line {
+            height: 2px
+            width: 100%
+            background: cyan;
+            box-shadow: 0 0 12px cyan;
+            position: absolute;
+            animation: scan 3s linear infinite;
+            }
+        @keyframes scan {
+            from {
+                top: 0;
+                }
+            to {
+                top: 118px;
+                }
+            }
             
     </style>
 </head>
@@ -375,6 +399,9 @@
             <h2>Iron Man Armor</h2>
             <p>Stark Industries - Armor Blueprint</p>
 
+            <div class="scanner">
+                <div class="scan-line"></div>
+            </div>
             <div class="blueprint-content">
                 <h3>MARK LXXXV</h3>
                 <p>Advanced Armor System</p>
