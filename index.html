@@ -330,7 +330,34 @@
                 top: 118px;
                 }
             }
-            
+
+        .diagnostics {
+            border: 1px solid cyan;
+            padding: 15px
+            margin-top: 20px;
+            text-align: left;
+            background: #020a12;
+            }
+        .diagnostics h2 {
+            text-align: center;
+            font-size: 18px;
+            text-shadow: 0 0 8px cyan;
+            }
+        .diagnostics p {
+           font-size: 13px
+            letter-spacing: 1px;
+            }
+        .status bar {
+            height: 10px
+            border: 1px solid cyan;
+            margin-bottom: 15px;
+            }
+        .power-level {
+            height: 100%;
+            width: 100%
+            background: cyan;
+            box-shadow: 0 0 10px cyan;
+            }
     </style>
 </head>
 
@@ -407,6 +434,18 @@
                 <p>Advanced Armor System</p>
                 <p>Power source: Arc Reactor</p>
                 <p>Status: Ready</p>
+            </div>
+            <div class=diagnostic">
+            <h2>JARVIS SYSTEM DIAGNOSTICS</h2>
+
+                <p>ARC REATOR POWER: 100%</p>
+                <div class="status-bar">
+                    <div class="power-level"></div>
+                </div>
+
+                <p>ARTIFICIAL INTELLIGENCE: ONLINE</p>
+                <P>SECURITY SYSTEM: ACTIVE</P>
+                <p>ARMOR STATUS: READY</p>
             </div>
         </section>
         
