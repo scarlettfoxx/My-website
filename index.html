@@ -365,6 +365,24 @@ width: 100%;
 background: cyan;
 box-shadow: 0 0 10px cyan;
 }
+  .mission-clock {
+border: 1px solid cyan;
+padding: 15px;
+margin: 20px 0;
+background: #020a12;
+text-align: center;
+box-shadow: 0 0 12px #00ffff33;
+}
+
+.mission-clock h2 {
+font-size: 18px;
+}
+
+.mission-clock p {
+font-size: 13px;
+letter-spacing: 1px;
+}
+
 </style>
 </head>
 
@@ -426,6 +444,12 @@ It may seem childish but it unlocked my love for building things.More upgrades c
 <button type="button" onclick="activateJarvis()">
 ACTIVATE JARVIS
 </button>
+  <div class="mission-clock">
+    <h2>STARK INDUSTRIES MISSION CLOCK</h2>
+    <p id="clock">Loading time...</p>
+    <p>Mission Status: <span style="color: #00ff99;">ACTIVE</span></p>
+    <p>elapsed mission time: <span id="mission-time">00:00:00</span></p>
+  </div>
 
 <p id="jarvis-message" aria-live="polite"></p>
 
@@ -501,6 +525,27 @@ loader.style.display = "none";
 }, 800);
 }, 1800);
 });
+
+  const missionStart = Date.now();
+
+function updateMissionClock() {
+const now = new Date();
+
+document.getElementById("clock").textContent =
+now.toLocaleTimeString();
+
+const elapsed = Math.floor((Date.now() - missionStart) / 1000);
+const hours = String(Math.floor(elapsed / 3600)).padStart(2, "0");
+const minutes = String(Math.floor((elapsed % 3600) / 60)).padStart(2, "0");
+const seconds = String(elapsed % 60).padStart(2, "0");
+
+document.getElementById("mission-time").textContent =
+`${hours}:${minutes}:${seconds}`;
+}
+
+updateMissionClock();
+setInterval(updateMissionClock, 1000);
+
 </script>
 
 </body>
