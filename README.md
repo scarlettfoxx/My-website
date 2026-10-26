@@ -1,4 +1,4 @@
-This projet is y first website inspired by Tony Stark and the Iron suit.
+This projet is my first website inspired by Tony Stark and the Iron suit.
 I created a futuristic website wirh a Jarvis-inspired interface to express my interest in technology and building things.
 This website includes: 
 A futuristic dark theme,
