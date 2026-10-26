@@ -15,3 +15,6 @@ How to run it:
 Download this repository
 Open index.html in a web browser
 Explore the website
+
+While building theis project, I learn how to change fonts, change color and background, and how to make a website.
+I hope to keep improving my learning as I learn more about programming and engineering.
