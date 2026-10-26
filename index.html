@@ -383,6 +383,48 @@ font-size: 13px;
 letter-spacing: 1px;
 }
 
+  .arc-reactor {
+width: 100px;
+height: 100px;
+margin: 25px auto;
+border: 4px solid #35c9ff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 15px cyan, inset 0 0 15px cyan;
+animation: reactor-pulse 2s ease-in-out infinite;
+}
+
+.reactor-core {
+width: 45px;
+height: 45px;
+background: #35c9ff;
+border-radius: 50%;
+box-shadow: 0 0 15px cyan, 0 0 35px cyan;
+animation: core-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes reactor-pulse {
+0%, 100% {
+box-shadow: 0 0 10px cyan, inset 0 0 10px cyan;
+}
+50% {
+box-shadow: 0 0 30px cyan, inset 0 0 20px cyan;
+}
+}
+
+@keyframes core-pulse {
+from {
+transform: scale(0.85);
+opacity: 0.7;
+}
+to {
+transform: scale(1.1);
+opacity: 1;
+}
+}
+
 </style>
 </head>
 
@@ -423,7 +465,7 @@ Terra challenge to hopefully win a framework laptop and 3D printer.</p>
 <h2>My hobbies/Interests:</h2>
 
 <p>Reading books, Playing sports, Watching movies,
-shows, or anime, and learning new things.</p>
+shows, or anime, and learning new things, and trying new foods.</p>
 
 <h2>My inspirations:</h2>
 
@@ -460,6 +502,12 @@ ACTIVATE JARVIS
 <div class="scanner">
 <div class="scan-line"></div>
 
+  <div class="arc-reactor">
+<div class="reactor-core"></div>
+</div>
+<p style="text-align: center;">ARC REACTOR: ONLINE</p>
+
+
 <svg viewBox="0 0 200 115" width="100%" height="115"
 xmlns="http://www.w3.org/2000/svg">
 <g fill="none" stroke="cyan" stroke-width="1.5">
@@ -482,7 +530,7 @@ L138 82 L115 103 L85 103 L62 82 L55 45 Z"/>
 <div class="blueprint-content">
 <h3>MARK LXXXV</h3>
 <p>Advanced Armor System</p>
-<p>Power source: Arc Reactor</p>
+<p>Power source: The Arc Reactor</p>
 <p>Status: Ready</p>
 </div>
 
